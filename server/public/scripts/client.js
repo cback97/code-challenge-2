@@ -4,8 +4,12 @@ $(document).ready(onReady);
 
 function onReady() {
     console.log('DOM ready');
-    $('#addJokeButton').on('click', addJoke)
-    
+    $('#addJokeButton').on('click', function(event){
+        event.preventDefault();
+        addJoke();
+
+    })
+ getJokes();
 }
 
 function addJoke() {
@@ -56,7 +60,7 @@ function getJokes() {
             alert('Sorry, could not get jokes. Try again later.');
         })
         // get request working properly
-    console.log('After makin server request...');
+    console.log('After making server request...');
 } // end getJokes
 
 
