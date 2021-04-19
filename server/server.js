@@ -46,5 +46,10 @@ app.get('/jokes', (req, res) =>{
 })
 
 app.post('/jokes', (req, res ) => {
-  
+  // newJoke must be acknowleged by body parser
+  let newJoke = req.body;
+  // push newJoke into the jokes array
+  jokes.push(newJoke)
+  // send status to terminal stating new object was successfully placed into array
+  res.sendStatus(201);
 })

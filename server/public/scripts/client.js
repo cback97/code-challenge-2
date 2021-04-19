@@ -25,7 +25,7 @@ function addJoke() {
         .then(function (response) {
             console.log('Response from server', response);
             render(response);
-            getQuotes();
+            getJokes();
         })
         .catch(function (error) {
             console.log('Error from server', error);
@@ -44,7 +44,6 @@ function getJokes() {
     $.ajax({
             method: 'GET',
             url: '/jokes',
-
         })
 
         .then(function (response) {
