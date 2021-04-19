@@ -1,13 +1,14 @@
-const express = require( 'express' );
+const express = require('express');
 const app = express();
-const bodyParser = require( 'body-parser' );
+const bodyParser = require('body-parser');
 const PORT = 5000;
 
 // use bodyParser.urlencoded throughout the app with this:
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-let jokes = [
-  {
+let jokes = [{
     whoseJoke: "Danny",
     jokeQuestion: "Why do scuba divers fall backwards out of boats?",
     punchLine: "If they fell forwards they’d still be in the boat!"
@@ -41,12 +42,12 @@ app.listen(PORT, () => {
   console.log('server running on: ', PORT);
 }); // end app.listen
 
-app.get('/jokes', (req, res) =>{
+app.get('/jokes', (req, res) => {
   // send back quotes array
   res.send(jokes)
 }) // end app.get
 
-app.post('/jokes', (req, res ) => {
+app.post('/jokes', (req, res) => {
   // newJoke must be acknowleged by body parser
   let newJoke = req.body;
   // push newJoke into the jokes array

@@ -4,14 +4,15 @@ $(document).ready(onReady);
 
 function onReady() {
     console.log('DOM ready');
-    $('#addJokeButton').on('click', jokeOperations())
- 
+    $('#addJokeButton').on('click', function(event) {
+        event.preventDefault();
+        addJoke();
+    })
+ getJokes();
 }
 
-function jokeOperations() {
-    addJoke();
-    getJokes();
-}
+
+
 function addJoke() {
     let newJoke = {
         whoseJoke: $('#whoseJokeIn').val(),
@@ -59,7 +60,7 @@ function getJokes() {
             console.log('Error from server', error);
             alert('Sorry, could not get jokes. Try again later.');
         })
-        // get request working properly
+    // get request working properly
     console.log('After making server request...');
 } // end getJokes
 
