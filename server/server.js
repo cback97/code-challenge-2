@@ -44,3 +44,7 @@ app.listen(PORT, () => {
 app.get('/jokes', (req, res) =>{
   res.send(jokes)
 })
+
+app.post('/jokes', (req, res ) => {
+  
+})

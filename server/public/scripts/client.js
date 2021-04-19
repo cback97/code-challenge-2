@@ -33,8 +33,9 @@ function addJoke() {
         })
 
     // clear inputs
-    $('#in-text').val('')
-    $('#in-person').val('')
+    $('#whoseJokeIn').val('')
+    $('#questionIn').val('')
+    $('#punchlineIn').val('')
 
 }
 
@@ -43,7 +44,7 @@ function getJokes() {
     $.ajax({
             method: 'GET',
             url: '/jokes',
-        
+
         })
 
         .then(function (response) {
