@@ -39,11 +39,12 @@ app.use(express.static('server/public'));
 
 app.listen(PORT, () => {
   console.log('server running on: ', PORT);
-}); // end spin up server
+}); // end app.listen
 
 app.get('/jokes', (req, res) =>{
+  // send back quotes array
   res.send(jokes)
-})
+}) // end app.get
 
 app.post('/jokes', (req, res ) => {
   // newJoke must be acknowleged by body parser
@@ -52,4 +53,4 @@ app.post('/jokes', (req, res ) => {
   jokes.push(newJoke)
   // send status to terminal stating new object was successfully placed into array
   res.sendStatus(201);
-})
+}) // end app.post

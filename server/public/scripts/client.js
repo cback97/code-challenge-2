@@ -5,6 +5,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('DOM ready');
     $('#addJokeButton').on('click', addJoke)
+    
 }
 
 function addJoke() {
@@ -37,7 +38,7 @@ function addJoke() {
     $('#questionIn').val('')
     $('#punchlineIn').val('')
 
-}
+} //end addJoke
 
 function getJokes() {
     // ajax method returns back a Promise
@@ -52,10 +53,11 @@ function getJokes() {
         })
         .catch(function (error) {
             console.log('Error from server', error);
-            alert('Sorry, could not get quotes. Try again later.');
+            alert('Sorry, could not get jokes. Try again later.');
         })
+        // get request working properly
     console.log('After makin server request...');
-}
+} // end getJokes
 
 
 // append jokes to outputDiv
@@ -70,4 +72,4 @@ function render(jokes) {
        <div>
        `)
     }
-}
+} // end render(jokes)
