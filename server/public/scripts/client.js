@@ -4,14 +4,14 @@ $(document).ready(onReady);
 
 function onReady() {
     console.log('DOM ready');
-    $('#addJokeButton').on('click', function(event){
-        event.preventDefault();
-        addJoke();
-
-    })
- getJokes();
+    $('#addJokeButton').on('click', jokeOperations())
+ 
 }
 
+function jokeOperations() {
+    addJoke();
+    getJokes();
+}
 function addJoke() {
     let newJoke = {
         whoseJoke: $('#whoseJokeIn').val(),
@@ -66,7 +66,9 @@ function getJokes() {
 
 // append jokes to outputDiv
 function render(jokes) {
+    //empty div befor rendering all/new jokes
     $('#outputDiv').empty();
+    // loop through jokes array and append the objects by property
     for (let item of jokes) {
         $('#outputDiv').append(`
        <div class="jokeLog">
